@@ -1,0 +1,12 @@
+---
+  - hosts: all
+    become: True
+    roles: 
+      - debian-security
+    vars:
+      debian_user: user_name
+      debian_version: buster
+      debian_kernel_version: 4.19.0-11-amd64   # $(uname -r)
+      debian_host: XXX.YYY.ZZZ.VVV    # IP Address or localhost
+      debian_private_key_file: ~/.ssh/demo-ssh
+      debian_port: 22
