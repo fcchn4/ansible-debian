@@ -51,6 +51,7 @@
         - lzop
         - cabextract
         - xz-utils
+        - fdupes
       state: latest
 
   - name: BATERY STATUS
