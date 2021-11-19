@@ -81,6 +81,9 @@
         - terminator
         - pwgen
         - translate-shell
+        - parted
+        - gparted
+        - gnome-disk-utility
       state: latest
 
   - name: SSH SERVER
