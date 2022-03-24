@@ -4,10 +4,10 @@
     roles: 
       - debian-base-repos
     vars:
-      debian_user: USER_NAME
-      debian_version: UBUNTU_NAME
+      debian_user: DEBIAN_USER
+      debian_version: DEBIAN_NAME
       debian_host: IP_OR_DOMAIN
-      debian_private_key_file: ~/.ssh/SSH_PRI_KEY
+      debian_private_key_file: ~/.ssh/SSH_PRIV_KEY
       debian_port: 22
       ansible_python_interpreter: /usr/bin/python3
 
