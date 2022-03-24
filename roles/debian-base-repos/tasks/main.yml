@@ -203,14 +203,13 @@
       name:
         - vim-tiny
         - xfburn
-        - gnome-mines
-        - gnome-sudoku
-        - sgt-puzzles
-        - simple-scan
-        - pidgin
-        - snapd
+        - xsane
+        - xsane-common
+        - exfalso
+        - parole
       state: absent
 
   - name: UNINSTALL UNNECESSARY PACKAGES
     apt:
       autoremove: yes
+
