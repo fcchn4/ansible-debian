@@ -4,9 +4,11 @@
     roles: 
       - debian-base-repos
     vars:
-      debian_user: user_name
-      debian_version: buster
-      debian_host: XXX.YYY.ZZZ.VVV    # IP Address or localhost
-      debian_private_key_file: ~/.ssh/demo-ssh
+      debian_user: USER_NAME
+      debian_version: UBUNTU_NAME
+      debian_host: IP_OR_DOMAIN
+      debian_private_key_file: ~/.ssh/SSH_PRI_KEY
       debian_port: 22
       ansible_python_interpreter: /usr/bin/python3
+
+# Debian Version Name: bullseye
