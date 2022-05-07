@@ -219,6 +219,7 @@
         - xsane-common
         - exfalso
         - parole
+        - xterm
       state: absent
 
   - name: UNINSTALL UNNECESSARY PACKAGES

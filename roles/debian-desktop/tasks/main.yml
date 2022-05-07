@@ -41,6 +41,11 @@
         - xscreensaver
         - xscreensaver-gl
         - xscreensaver-gl-extra
+        - im-config
+        - blueman
+        - bluez
+        - bluetooth
+        - pulseaudio-module-bluetooth
       state: latest    
   
   - name: INSTALL INTEL TOOLS AND SENSORS
@@ -138,6 +143,7 @@
         - network-manager-openconnect
         - network-manager-openconnect-gnome
         - software-properties-gtk
+        - thunderbird
       state: latest
 
   - name: HDD TOOLS
