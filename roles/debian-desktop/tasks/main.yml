@@ -16,6 +16,8 @@
       name:
         - mugshot
         - obsidian-icon-theme
+        - greybird-gtk-theme
+        - blackbird-gtk-theme
         - xfce4-screenshooter
         - xfce4-clipman
         - xfce4-clipman-plugin
@@ -127,6 +129,26 @@
         - transmission
         - cheese
         - figlet
+        - keepassxc
+        - gromit-mpx
+        - ranger
+        - network-manager-openvpn
+        - network-manager-openvpn-gnome
+        - network-manager-openconnect
+        - network-manager-openconnect-gnome
+        - software-properties-gtk
+      state: latest
+
+  - name: HDD TOOLS
+    apt:
+      name:
+        - gparted
+        - gpart
+        - parted
+        - ntfs-3g
+        - exfat-fuse
+        - exfat-utils
+        - gnome-disk-utility
       state: latest
 
   - name: SSH SERVER
@@ -137,6 +159,10 @@
         - openssh-server
         - openssh-client
         - mosh
+        - putty
+        - putty-tools
+        - ssh-askpass
+        - ssh-askpass-gnome
       state: latest
 
   - name: FIREWALL
@@ -155,9 +181,16 @@
         - vorbis-tools
         - faac
         - faad
-        - w64codecs
         - ffmpeg
         - ffmpeg2theora
+        - alsa-firmware-loaders
+        - alsa-oss
+        - alsa-tools
+        - alsa-utils
+        - mesa-utils
+        - mesa-utils-extra
+        - obs-studio
+        - obs-plugins
       state: latest
 
   - name: FONTS TYPOGRAPHICS
@@ -175,18 +208,26 @@
         - gimp-data-extras
         - inkscape
         - inkscape-open-symbols
+        - inkscape-textext
         - dia
         - dia-rib-network
         - dia-shapes
         - dia-common
         - peek
+        - optipng
+        - imagemagick
       state: latest
 
-  - name: WEB BROWSERS
+  - name: PRINTES TOOLS
     apt:
       name:
-        - chromium
-        - chromium-l10n
+        - cups
+        - cups-core-drivers
+        - cups-filters
+        - cups-filters-core-drivers
+        - cups-ipp-utils
+        - hplip
+        - hplip-data
       state: latest
 
   - name: GOOGLE CHROME
@@ -208,14 +249,23 @@
     apt:
       name: code
       state: latest
+
+  - name: TYPORA
+    apt:
+      name: typora
+      state: latest
       
   - name: PROGRAMMING LANGUAGE AND FRAMEWORKS
     apt:
       name:
-        - hugo
         - nodejs
         - yarn
         - golang
+        - jq
+        - default-jdk
+        - default-jre
+        - python3-virtualenv
+        - python3-pip
       state: latest
 
   - name: KVM VIRTUALIZATION
@@ -244,6 +294,19 @@
         - containerd.io
       state: latest
 
+  - name: VAGRANT
+    apt:
+      name:
+        - vagrant
+        - vagrant-digitalocean
+        - vagrant-libvirt
+      state: latest
+
+  - name: ANSIBLE
+    apt:
+      name: ansible
+      state: latest
+
   - name: GET KERNEL NAME
     shell: uname -s
     register: kernel_name_output
@@ -258,22 +321,16 @@
 
   - name: INSTALL DOCKER COMPOSE
     get_url:
-      url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
+      url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
       dest: /usr/local/bin/docker-compose 
       mode: "0755"
 
   - name: DETECT AUTOMATIC SENSORS
     shell: sensors-detect --auto
 
-  - name: ENABLE DAEMONS
+  - name: ENABLE TUNED DAEMON
     systemd:
       name: tuned
-      state: started
-      enabled: yes
-
-  - name: ENABLE DAEMON ACPI
-    systemd: 
-      name: acpid
       state: started
       enabled: yes
 

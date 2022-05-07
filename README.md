@@ -21,6 +21,8 @@ This repository contains a list of packages for Fedora, Debian, and Ubuntu distr
 - [packer](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
 - [assume-role](https://github.com/remind101/assume-role)
 - [ulauncher](https://ulauncher.io/#Download)
+- [hugo](https://github.com/gohugoio/hugo/releases)
+- [docker-compose](https://github.com/docker/compose/releases)
 
 ## List of Repositories
 
