@@ -1,6 +1,6 @@
 all:
   hosts:
-    buster:
+    debian:
       ansible_host: "{{ debian_host }}"
       
   vars:    

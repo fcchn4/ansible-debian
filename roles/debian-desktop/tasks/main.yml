@@ -10,13 +10,41 @@
       name: 
         - linux-headers-{{ kernel_version_output.stdout }}
       state: latest
+
+  - name: INSTALL XFCE CUSTOMIZE
+    apt:
+      name:
+        - mugshot
+        - obsidian-icon-theme
+        - xfce4-screenshooter
+        - xfce4-clipman
+        - xfce4-clipman-plugin
+        - xfce4-cpufreq-plugin
+        - xfce4-cpugraph-plugin
+        - xfce4-indicator-plugin
+        - xfce4-mailwatch-plugin
+        - xfce4-netload-plugin
+        - xfce4-places-plugin
+        - xfce4-sensors-plugin
+        - xfce4-smartbookmark-plugin
+        - xfce4-statusnotifier-plugin
+        - xfce4-systemload-plugin
+        - xfce4-taskmanager
+        - xfce4-timer-plugin
+        - xfce4-verve-plugin
+        - xfce4-weather-plugin
+        - xfce4-whiskermenu-plugin
+        - xfce4-xkb-plugin
+        - xscreensaver
+        - xscreensaver-gl
+        - xscreensaver-gl-extra
+      state: latest    
   
   - name: INSTALL INTEL TOOLS AND SENSORS
     apt:
       name:
         - intel-microcode
         - intel-gpu-tools
-        - inteltool
         - lm-sensors
       state: latest
 
@@ -26,6 +54,13 @@
         - firmware-linux
         - firmware-linux-free
         - firmware-linux-nonfree
+        - firmware-atheros
+        - firmware-bnx2
+        - firmware-bnx2x
+        - firmware-iwlwifi
+        - firmware-libertas
+        - firmware-realtek
+        - firmware-samsung 
       state: latest
 
   - name: PACKAGES COMPRESS AND UNCOMPRESS
@@ -57,9 +92,9 @@
   - name: BATERY STATUS
     apt:
       name:
-        - acpi
-        - acpid
-        - acpitool
+        #- acpi
+        #- acpid
+        #- acpitool
         - tuned
         - tuned-gtk
         - tuned-utils
@@ -77,6 +112,7 @@
         - ethtool
         - mlocate
         - hardinfo
+        - hwinfo
         - tmux
         - terminator
         - pwgen
@@ -84,6 +120,13 @@
         - parted
         - gparted
         - gnome-disk-utility
+        - vim-scripts
+        - vim-latexsuite
+        - vim-python-jedi
+        - telegram-desktop
+        - transmission
+        - cheese
+        - figlet
       state: latest
 
   - name: SSH SERVER
