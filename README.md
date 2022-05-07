@@ -60,7 +60,7 @@ This ansible poroject is for automatic install on post-installation for Debian O
 
 The project have three playbooks:
 
-- debian-base-repos.yml
+- debian-base.yml
 - debian-desktop.yml
 - debian-security.yml
 
@@ -83,7 +83,7 @@ Execution order:
 1. **debian-base-repos.yml**:
 
 ```bash
-$ ansible-playbook debian-base-repos.yml \
+$ ansible-playbook debian-base.yml \
 --ask-become-pass \
 -i inventory/inventory.yml
 ```
