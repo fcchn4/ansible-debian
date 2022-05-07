@@ -124,6 +124,8 @@
         - tmux
         - terminator
         - pwgen
+        - inxi
+        - lshw
         - translate-shell
         - parted
         - gparted
@@ -301,12 +303,19 @@
         - containerd.io
       state: latest
 
-  - name: VAGRANT
+  - name: HASHICORP
     apt:
       name:
         - vagrant
-        - vagrant-digitalocean
-        - vagrant-libvirt
+        - terraform
+        - packer
+        - kubectl
+      state: latest
+
+  - name: SPOTIFY
+    apt:
+      name:
+        - spotify-client
       state: latest
 
   - name: ANSIBLE
