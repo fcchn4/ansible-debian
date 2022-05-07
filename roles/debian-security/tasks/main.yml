@@ -26,6 +26,8 @@
         - ettercap-text-only
         - tcpdump
         - wireshark
+        - aircrack-ng
+        - cowpatty
       state: latest
 
   - name: EXTRA TOOLS
@@ -35,6 +37,48 @@
         - mediainfo
         - mediainfo-gui
         - stegosuite
+        - crunch
+        - exiftool
+        - httrack
+        - fping
+        - masscan
+        - iftop
+        - hydra
+        - hydra-gtk
+        - chkrootkit
+        - hping3
+      state: latest
+
+  - name: ANDROID TOOLS
+    apt:
+      name:
+        - apkinfo
+        - apktool
+      state: latest
+
+  - name: DEEP WEB TOOLS
+    apt:
+      name:
+        - torbrowser-launcher
+        - torsocks
+        - tor
+        - proxychains
+        - proxytunnel
+      state: latest
+
+  - name: HARDENING TOOLS
+    apt:
+      name: 
+        - lynis
+        - dnsdiag
+      state: latest
+
+  - name: DATABASES TOOLS
+    apt:
+      name: 
+        - sqlmap
+        - sqlitebrowser
+        - sqlite3
       state: latest
 
 #  - name: ADD USER ON GROUPS
