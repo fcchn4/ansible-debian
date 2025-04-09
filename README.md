@@ -1,12 +1,12 @@
 # Ansible Install Linux
 
-This repository contains a list of packages for Fedora, Debian, and Ubuntu distributions. It only contains a long list of packages for some GNU/Linux distributions.
+This repository contains a list of packages for Debian. It only contains a long list of packages for some GNU/Linux distributions.
 
 ## List
 
-- [Debian Packages](debian-software.md)
+- [Debian Packages](docs/debian-software.md)
 
-## Debian 10
+## Debian 12
 
 ## Packages Extra no Included
 
@@ -66,9 +66,9 @@ The project have three playbooks:
 
 ## Versions
 
-- XFCE: 4.12.0
-- Debian: 10 Buster
-- Ansible: 2.9
+- XFCE: 4.18
+- Debian: 12 Bookworm
+- Ansible: 2.16
 
 ## Commands
 

@@ -7,6 +7,14 @@
       group: "root"
       mode: "0644"
 
+  - name: ADD DEBIAN SOURCES
+    template:
+      src: debian.sources
+      dest: /etc/apt/sources.list.d/
+      owner: "root"
+      group: "root"
+      mode: "0644"
+
   - name: CUSTOM BASHRC
     template:
       src: bashrc
@@ -76,34 +84,6 @@
     apt_repository:
       repo: deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main
       filename: yarn
-      state: present
-
-  - name: MARIADB KEY
-    apt_key:
-      url: https://mariadb.org/mariadb_release_signing_key.asc
-      state: present
-
-  - name: MARIADB
-    apt_repository:
-      repo: deb [arch=amd64] https://ftp.agdsn.de/pub/mirrors/mariadb/repo/10.6/debian {{ debian_version }} main
-      filename: mariadb
-      state: present
-
-  - name: MARIADB SRC
-    apt_repository:
-      repo: deb-src https://ftp.agdsn.de/pub/mirrors/mariadb/repo/10.6/debian {{ debian_version }} main
-      filename: mariadb
-      state: present
-
-  - name: POSTGRESQL KEY
-    apt_key:
-      url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
-      state: present
-
-  - name: POSTGESQL
-    apt_repository: 
-      repo: deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt {{ debian_version }}-pgdg main
-      filename: pgdg
       state: present
 
   - name: DOCKER GPG
@@ -200,21 +180,17 @@
         - checkinstall
         - make
         - automake
-        - cmake
         - autoconf
         - dkms
         - git
         - dirmngr
         - software-properties-common
-        - gcc
-        - g++
       state: latest
 
   - name: UNINSTALL DEFAULT PACKAGES
     apt:
       name:
         - vim-tiny
-        - xfburn
         - xsane
         - xsane-common
         - exfalso
