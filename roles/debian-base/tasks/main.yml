@@ -150,6 +150,152 @@
       components:
         - main
 
+  - name: GOOGLE-CHROME
+    deb822_repository:
+      name: google-chrome
+      types: deb
+      uris: https://dl.google.com/linux/chrome/deb
+      suites: stable
+      signed_by: https://dl.google.com/linux/linux_signing_key.pub
+      enabled: true
+      architectures:
+        - amd64
+      components:
+        - main
+
+  - name: CLOUDFLARED
+    deb822_repository:
+      name: cloudflared
+      types: deb
+      uris: https://pkg.cloudflare.com/cloudflared
+      suites: any
+      signed_by: https://pkg.cloudflare.com/cloudflare-main.gpg
+      enabled: true
+      architectures:
+        - amd64
+      components:
+        - main
+
+  - name: GRAFANA
+    deb822_repository:
+      name: grafana
+      types: deb
+      uris: https://apt.grafana.com
+      suites: stable
+      signed_by: https://apt.grafana.com/gpg.key 
+      enabled: true
+      components:
+        - main
+
+  - name: MICROSOFT-EDGE
+    deb822_repository:
+      name: microsoft-edge
+      types: deb
+      uris: https://packages.microsoft.com/repos/edge
+      suites: stable
+      signed_by: https://packages.microsoft.com/keys/microsoft.asc
+      enabled: true
+      architectures:
+        - amd64
+      components:
+        - main
+
+  - name: OPENVPN3
+    deb822_repository:
+      name: openvpn3
+      types: deb
+      uris: https://packages.openvpn.net/openvpn3/debian
+      suites: "{{ debian_version }}"
+      signed_by: https://packages.openvpn.net/packages-repo.gpg
+      enabled: true
+      components:
+        - main
+
+  - name: POSTGRESQL
+    deb822_repository:
+      name: pgdg
+      types: deb
+      uris: https://apt.postgresql.org/pub/repos/apt
+      suites: "{{ debian_version }}-pgdg"
+      signed_by: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+      enabled: true
+      components:
+        - main
+
+  - name: SIGNAL
+    deb822_repository:
+      name: signal
+      types: deb
+      uris: https://updates.signal.org/desktop/apt
+      suites: xenial
+      signed_by: https://updates.signal.org/desktop/apt/keys.asc
+      enabled: true
+      architectures:
+        - amd64
+      components:
+        - main
+
+  - name: SYNCTHING
+    deb822_repository:
+      name: sincthing
+      types: deb
+      uris: https://apt.syncthing.net
+      suites: syncthing
+      signed_by: https://syncthing.net/release-key.gpg
+      enabled: true
+      components:
+        - stable
+
+  - name: TRIVY
+    deb822_repository:
+      name: trivy
+      types: deb
+      uris: https://aquasecurity.github.io/trivy-repo/deb
+      suites: generic
+      signed_by: https://aquasecurity.github.io/trivy-repo/deb/public.key
+      enabled: true
+      components:
+        - main
+
+  - name: ULAUNCHER
+    deb822_repository:
+      name: ulauncher
+      types: deb
+      uris: https://ppa.launchpadcontent.net/agornostal/ulauncher/ubuntu
+      suites: noble
+      enabled: true
+      components:
+        - main
+      signed_by: |-
+        -----BEGIN PGP PUBLIC KEY BLOCK-----
+        .
+        mQINBFU7uhABEADX+dREIrFMc7DmSXZ5uu8D5Rl9dcmOF1qRvbkGbhfSgmQGG3d4
+        xgQgCPOu/SNd/TUI7j4PB3G544Gv1uGRHwxNQyClknX1WiPGTYHLV61r8noITZez
+        N/fcfDZqnTaGzVg522jQDfhsdpinLMfeqTH9afe+FRv3fquW/zu5aY3LRLn3pIr0
+        5w9GFaL8KP5k04h4tCyYELr/mFtSB2YlQSTTp/3b2NpmRAmy89K8iGv8HWSw/smE
+        iOO6d+qDYDnNvRE0ZGhppmOOXCBrvUHBtei02BKfjnhEARXtSd+TkuGWW/A7F0Ic
+        IpLFlGbbjxy83yglcPmAnmEgRL3ow2Ek9acyQCS81sezW/mTE6+DY8/Z04x3HTh3
+        NPBdhyJSCX7YQcqKpv6y+Pfk+T8MZ1ICuU/BgYVsBl0Xl456FO/AKBZoeiBU1iU1
+        iYyUAqv0d/yBQNtZUtp4Hvk0cEChCjVcUu4+E9QWINikn976p721cPTPgY+drQbC
+        A8a2mk2DeUfmAGRXZ0h3A1z+ofbBwuoBzVqd36zLOwHcuSwlWjbUxuyQ/oB24JmY
+        aFqStru0VlyE5xbftZlFL7lejg0py7S3qerTFhlTeav4CSq8oLB1Ox5k/H54IZ/2
+        +lzuuPFoAAQILmM5aWECrLo5GeP9wvP3evg0uPiy8Kcutw4mQZf4Im0JCwARAQAB
+        tCVMYXVuY2hwYWQgUFBBIGZvciBBbGVrc2FuZHIgR29ybm9zdGFsiQI4BBMBAgAi
+        BQJVO7oQAhsDBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRD68QIGmVAxdm+w
+        EACZ9gLfOGxuVnHgbIRTEhzXYIWI1/mTKJcZnou9xgq8mFnnbzetoPlwXeejcvAC
+        FTHsjhIatrPZ3xGZzIKKRmfkP8/32kzeaBYvB2oXaix0TPdJKXFlQI+014wwVW9e
+        unQBNlvjBv1+XCYmsIRvIN47LNy5ooNAsccX50Y9HiDGe1oRqUvvRN3ZUQri0exy
+        ttoJEapcbgwYV0CIlBbwFPsVjLw2a+Ihn8Uj5EqdrPgpnpTbwd+KE54WW8mxTYuF
+        M/MbsNb54wKrpMd5iEziZ7hJtHbP3UizAQDqLfMDlHmuAtiOe7tR+QrwjsC/uamo
+        vvFIIAmzemFGx3KfSUdMPUW7EoE9OPlvZLiLzodkJU4ippX5HVXJPPYhIX9yjoMR
+        +n/g6iYlJVkd6Ct7UeyzfpeDcc0O1dBprHFv3Mz12hJxi8v0x6uL5w8hq+p03fsv
+        2whFWPpkGq08wNftjMR90bD93852oU9MFIqMIhVdvQOfAWuAlb36FMc/uEP8YUhn
+        Gmui7gCqdjEmbK2noWoAjDPvT4mBw6vQIxqQAxWKjncj2uOJMP/KYpCkExoobuns
+        3GNGExETNCNZgRSiAd1k1yLY5bQNL8Dm7e+B3TMgYdbI3i2dO+C9U8Zh0wqTZPDM
+        Z8KNR1GrrQK0iirG04jYtGBDWxITuKT0rDURJcPy156Iig==
+        =E6TL
+        -----END PGP PUBLIC KEY BLOCK-----
+
   - name: UPDATE CACHE
     apt:
       update_cache: yes
@@ -180,6 +326,7 @@
         - git
         - dirmngr
         - software-properties-common
+        - debsig-verify
       state: latest
 
   - name: UNINSTALL DEFAULT PACKAGES
@@ -191,9 +338,14 @@
         - exfalso
         - parole
         - xterm
+        - firefox-esr
       state: absent
 
   - name: UNINSTALL UNNECESSARY PACKAGES
     apt:
       autoremove: yes
 
+# GPG Cloudflared: https://pkg.cloudflare.com/index.html
+# GPG Google Chrome: https://www.google.com/linuxrepositories/
+# GPG Grafana: https://apt.grafana.com/
+# GPG Slack: https://slack.com/gpg/slack_pubkey_20240822.gpg
