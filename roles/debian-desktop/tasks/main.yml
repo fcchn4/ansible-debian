@@ -93,7 +93,7 @@
         - fdupes
       state: latest
 
-  - name: BATERY STATUS
+  - name: PC STATUS
     apt:
       name:
         - acpi
@@ -134,6 +134,8 @@
         - network-manager-openconnect-gnome
         - software-properties-gtk
         - thunderbird
+        - flameshot
+        - ulauncher
       state: latest
 
   - name: HDD TOOLS
