@@ -6,7 +6,7 @@ This repository contains a list of packages for Debian. It only contains a long 
 
 - [Debian Packages](docs/debian-package.md)
 - [Extra Packages](docs/extra-package.md)
-- [Ansible Code Snippets](docs/package-install.md).
+- [Ansible Code Snippets](docs/package-install.md)
 
 ## Pre-Requisites
 
@@ -49,28 +49,36 @@ $ cd ansible-debian
 
 Execution order:
 
-1. **debian-base-repos.yml**:
+1. **debian-base.yml**:
 
 ```bash
-$ ansible-playbook debian-base.yml \
---ask-become-pass \
+$ ansible-playbook debian-base.yml --ask-become-pass \
 -i inventory/inventory.yml
 ```
 
 2. **debian-desktop.yml**:
 
 ```bash
-$ ansible-playbook debian-desktop.yml \
---ask-become-pass \
--i inventory/inventory.yml \
--e "ansible_python_interpreter=/usr/bin/python3"
+$ ansible-playbook debian-desktop.yml -i inventory/inventory.yml
 ```
 
 3. **debian-security.yml**:
 
 ```bash
-$ ansible-playbook debian-security.yml \
---ask-become-pass \
--i inventory/inventory.yml \
--e "ansible_python_interpreter=/usr/bin/python3"
+$ ansible-playbook debian-security.yml -i inventory/inventory.yml
+```
+
+## Example Commands
+
+- Execute ansible playbook commands as sudo (--ask-become-pass or -k):
+
+```bash
+$ ansible-playbook debian-base.yml -i inventory.yml -k
+```
+
+- Execute ansible playbook with reference python version:
+
+```bash
+$ ansible-playbook debian-security.yml -i inventory.yml \
+-e "ansible_python_interpreter=/usr/bin/python3" --ask-become-pass
 ```
