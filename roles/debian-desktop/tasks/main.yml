@@ -38,9 +38,6 @@
         - xfce4-weather-plugin
         - xfce4-whiskermenu-plugin
         - xfce4-xkb-plugin
-        - xscreensaver
-        - xscreensaver-gl
-        - xscreensaver-gl-extra
         - im-config
         - blueman
         - bluez
@@ -100,9 +97,8 @@
   - name: BATERY STATUS
     apt:
       name:
-        #- acpi
-        #- acpid
-        #- acpitool
+        - acpi
+        - acpitool
         - tuned
         - tuned-gtk
         - tuned-utils
@@ -127,18 +123,11 @@
         - inxi
         - lshw
         - translate-shell
-        - parted
-        - gparted
-        - gnome-disk-utility
         - vim-scripts
-        - vim-latexsuite
-        - vim-python-jedi
-        - telegram-desktop
         - transmission
         - cheese
         - figlet
         - keepassxc
-        - gromit-mpx
         - ranger
         - network-manager-openvpn
         - network-manager-openvpn-gnome
@@ -277,22 +266,9 @@
         - python3-pip
       state: latest
 
-  - name: KVM VIRTUALIZATION
-    apt:
-      name:
-        - qemu-kvm
-        - qemu-utils
-        - libvirt-clients
-        - libvirt-daemon-system
-        - virt-viewer
-        - virt-what
-        - virtinst
-        - virt-manager
-      state: latest
-  
   - name: VIRTUALBOX
     apt:
-      name: virtualbox-6.1
+      name: virtualbox-7.1
       state: latest
 
   - name: DOCKER CE
@@ -301,9 +277,11 @@
         - docker-ce
         - docker-ce-cli
         - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
       state: latest
 
-  - name: HASHICORP
+  - name: DEVOPS
     apt:
       name:
         - vagrant
@@ -323,36 +301,12 @@
       name: ansible
       state: latest
 
-  - name: GET KERNEL NAME
-    shell: uname -s
-    register: kernel_name_output
-
-  - debug: msg="{{ kernel_name_output.stdout }}"
-
-  - name: GET HARDWARE MACHINE
-    shell: uname -m
-    register: kernel_machine_output
-
-  - debug: msg="{{ kernel_machine_output.stdout }}"
-
-  - name: INSTALL DOCKER COMPOSE
-    get_url:
-      url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
-      dest: /usr/local/bin/docker-compose 
-      mode: "0755"
-
   - name: DETECT AUTOMATIC SENSORS
     shell: sensors-detect --auto
 
   - name: ENABLE TUNED DAEMON
     systemd:
       name: tuned
-      state: started
-      enabled: yes
-
-  - name: ENABLE DAEMON LIBVIRT
-    systemd:
-      name: libvirtd
       state: started
       enabled: yes
 
@@ -366,7 +320,7 @@
     user:
       name: "{{ debian_user }}"
       #shell: /bin/bash
-      groups: adm,docker,input,kvm,libvirt,libvirt-qemu,vboxusers
+      groups: adm,docker,input,vboxusers
       append: yes
 
   - name: CREATE FILE TERMINATOR

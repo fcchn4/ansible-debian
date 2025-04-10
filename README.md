@@ -6,6 +6,7 @@ This repository contains a list of packages for Debian. It only contains a long 
 
 - [Debian Packages](docs/debian-package.md)
 - [Extra Packages](docs/extra-package.md)
+- [Ansible Code Snippets](docs/package-install.md).
 
 ## Pre-Requisites
 
