@@ -80,9 +80,3 @@
         - sqlitebrowser
         - sqlite3
       state: latest
-
-#  - name: ADD USER ON GROUPS
-#    user:
-#      name: "{{ debian_user }}"
-#      groups: tcpdump,wireshark
-#      append: yes

@@ -70,3 +70,13 @@ Tasks for Debian Desktop
       dest: /usr/local/bin/docker-compose 
       mode: "0755"
 ```
+
+- TCPDUMP and WIRESHARK GROUPS
+
+```yml
+  - name: ADD USER ON GROUPS
+    user:
+      name: "{{ debian_user }}"
+      groups: tcpdump,wireshark
+      append: yes
+```
