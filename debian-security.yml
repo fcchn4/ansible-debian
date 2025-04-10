@@ -4,8 +4,8 @@
     roles: 
       - debian-security
     vars:
-      debian_user: USER_NAME
-      debian_version: DEBIAN_NAME
+      debian_user: DEBIAN_USER
+      debian_version: DEBIAN_VERSION
       debian_host: IP_OR_DOMAIN
       debian_private_key_file: ~/.ssh/SSH_PRIV_KEY
       debian_port: 22
