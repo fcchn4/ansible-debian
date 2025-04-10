@@ -30,7 +30,6 @@
         - xfce4-places-plugin
         - xfce4-sensors-plugin
         - xfce4-smartbookmark-plugin
-        - xfce4-statusnotifier-plugin
         - xfce4-systemload-plugin
         - xfce4-taskmanager
         - xfce4-timer-plugin
@@ -145,8 +144,9 @@
         - parted
         - ntfs-3g
         - exfat-fuse
-        - exfat-utils
+        - exfatprogs
         - gnome-disk-utility
+        - smartmontools
       state: latest
 
   - name: SSH SERVER
@@ -180,7 +180,6 @@
         - faac
         - faad
         - ffmpeg
-        - ffmpeg2theora
         - alsa-firmware-loaders
         - alsa-oss
         - alsa-tools
@@ -214,6 +213,7 @@
         - peek
         - optipng
         - imagemagick
+        - markdown
       state: latest
 
   - name: PRINTES TOOLS
@@ -260,6 +260,9 @@
         - yarn
         - golang
         - jq
+        - yq
+        - yamllint
+        - pandoc
         - default-jdk
         - default-jre
         - python3-virtualenv
