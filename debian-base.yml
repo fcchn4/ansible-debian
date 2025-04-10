@@ -4,10 +4,10 @@
     roles: 
       - debian-base
     vars:
-      debian_user: DEBIAN_USER
-      debian_version: DEBIAN_NAME
-      debian_host: IP_OR_DOMAIN
-      debian_private_key_file: ~/.ssh/SSH_PRIV_KEY
+      debian_user: freddy
+      debian_version: bookworm
+      debian_host: 10.172.0.9
+      debian_private_key_file: ~/.ssh/fcch-ssh
       debian_port: 22
       ansible_python_interpreter: /usr/bin/python3
 

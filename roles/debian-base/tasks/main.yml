@@ -23,6 +23,36 @@
       group: "{{ debian_user }}"
       mode: "0644"
 
+  - name: SUDO NOPASSWD
+    template:
+      src: 010_user_nopasswd
+      dest: /etc/sudoers.d/010_user_nopasswd
+      owner: "root"
+      group: "root"
+      mode: "0644"      
+
+  - name: DOWNLOAD GPG DEB-MULTIMEDIA
+    ansible.builtin.get_url:
+      url: https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2024.9.1_all.deb
+      dest: /tmp/deb-multimedia-keyring.deb
+
+  - name: INSTALL GPG DEB-MULTIMEDIA
+    ansible.builtin.apt:
+      deb: /tmp/deb-multimedia-keyring.deb
+
+  - name: DEB-MULTIMEDIA
+    deb822_repository:
+      name: deb-multimedia
+      types: deb
+      uris: https://www.deb-multimedia.org
+      suites: "{{ debian_version }}"
+      enabled: true
+      components:
+        - main
+        - non-free
+      architectures:
+        - amd64
+
   - name: SPOTIFY
     deb822_repository:
       name: spotify
