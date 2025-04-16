@@ -24,7 +24,7 @@
       group: "{{ debian_user }}"
       mode: "0644"
 
-  - name: DETECT AUTOMATIC SENSORS
+  - name: XFCE4 XFCONF-QUERY
     shell: |
       xfconf-query -c xfce4-panel -p /panels/panel-2 -rR
       xfconf-query -c xfce4-panel -p /panels -n -t int -a -s 1

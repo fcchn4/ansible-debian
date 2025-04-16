@@ -68,6 +68,12 @@ $ ansible-playbook debian-desktop.yml -i inventory/inventory.yml
 $ ansible-playbook debian-security.yml -i inventory/inventory.yml
 ```
 
+4. **debian-xfce4.yml**:
+
+```bash
+$ ansible-playbook debian-xfce4.yml -i inventory/inventory.yml
+```
+
 ## Example Commands
 
 - Execute ansible playbook commands as sudo (--ask-become-pass or -k):
