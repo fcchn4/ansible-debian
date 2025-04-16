@@ -28,7 +28,6 @@
     shell: |
       xfconf-query -c xfce4-panel -p /panels/panel-2 -rR
       xfconf-query -c xfce4-panel -p /panels -n -t int -a -s 1
-      xfce4-panel --restart
       xfconf-query -c xsettings -p /Net/ThemeName -s "Greybird-dark"
       xfconf-query -c xsettings -p /Net/IconThemeName -s "elementary-xfce-dark"
       xfconf-query -c xfwm4 -p /general/theme -s "Greybird-dark"
